@@ -1,241 +1,197 @@
 :root {
-  /* A mule's own coloring: grulla body, mealy oat muzzle, dark dorsal stripe, brass tack. */
-  --bg:     #E9E8E2;
-  --ink:    #24241F;
-  --grulla: #6C6B62;
-  --rule:   #C7C5BA;
-  --brass:  #8A6B24;
+  --paper: #FBFAF5;
+  --ink:   #1A1912;
+  --dim:   #86836F;
+  --rule:  #E1DFD2;
+  --moss:  #4E5D3A;
 
-  --display: "Saira Condensed", "Arial Narrow", sans-serif;
-  --body: "Source Serif 4", Georgia, serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, Menlo, monospace;
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--paper);
   color: var(--ink);
-  font-family: var(--body);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- the trail ---------- */
-
-.trail {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 56px;
-  height: 100vh;
-  color: var(--rule);
-  pointer-events: none;
-  z-index: 2;
+.page {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 4rem;
 }
 
-.trail-svg { width: 56px; height: 100%; display: block; }
+/* ---------- hero ---------- */
 
 .mule {
-  position: absolute;
-  left: 12px;
-  top: 0;
-  color: var(--grulla);
-  transform: translate(-50%, -100%);
-  transition: left .18s linear, top .18s linear;
-}
-
-.mule.flip { transform: translate(-50%, -100%) scaleX(-1); }
-
-/* ---------- page frame ---------- */
-
-.wrap {
-  max-width: 37rem;
-  margin: 0 auto;
-  padding: 7rem 1.5rem 5rem;
-}
-
-/* ---------- masthead ---------- */
-
-.eyebrow {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: .8125rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--brass);
   margin: 0 0 1.25rem;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--ink);
+  white-space: pre;
+  overflow-x: auto;
 }
 
 h1 {
-  font-family: var(--display);
+  font-size: 1.05rem;
   font-weight: 700;
-  font-size: clamp(3.75rem, 15vw, 6.5rem);
-  line-height: .88;
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  margin: 0 0 1.5rem;
-}
-
-.lede {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin: 0 0 1rem;
-  max-width: 30rem;
-}
-
-.meta {
-  color: var(--grulla);
-  font-style: italic;
-  margin: 0;
-}
-
-.intro { padding-bottom: 3.5rem; }
-
-/* ---------- sections ---------- */
-
-.section {
-  position: relative;
-  border-top: 1px solid var(--rule);
-  padding: 2.75rem 0 3.25rem;
-}
-
-.section h2 {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: .875rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--grulla);
-  margin: 0 0 2rem;
-}
-
-.section p { margin: 0 0 1rem; }
-
-/* ---------- work list ---------- */
-
-.list, .links { list-style: none; margin: 0; padding: 0; }
-
-.item { margin: 0 0 2.5rem; }
-.item:last-child { margin-bottom: 0; }
-
-.item h3 {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: .01em;
+  letter-spacing: .02em;
   margin: 0 0 .5rem;
 }
 
-.item p { margin: 0 0 .5rem; max-width: 32rem; }
-
-.wip {
-  font-size: .6875rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--brass);
-  vertical-align: .35em;
-  margin-left: .5rem;
+h2 {
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin: 0 0 .25rem;
 }
 
-.tags {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: .8125rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--grulla);
+.tagline {
+  color: var(--dim);
+  margin: 0 0 1.5rem;
 }
 
-/* ---------- links ---------- */
+/* ---------- nav ---------- */
+
+.nav {
+  margin: 0 0 1.75rem;
+}
+
+.nav a, .links a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+.nav a:hover, .links a:hover, .entry h3 a:hover {
+  color: var(--moss);
+  border-color: var(--moss);
+}
+
+.nav a.current {
+  color: var(--moss);
+  border-bottom: 1px solid var(--moss);
+}
+
+.sep {
+  color: var(--rule);
+  margin: 0 .5em;
+}
+
+/* ---------- rules & body copy ---------- */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 1.75rem 0;
+}
+
+p { margin: 0 0 1rem; }
 
 a {
-  color: inherit;
+  color: var(--moss);
   text-decoration: none;
-  border-bottom: 1px solid var(--brass);
-  padding-bottom: 1px;
-  transition: background-color .15s ease;
+  border-bottom: 1px solid var(--moss);
 }
 
-a:hover { background: rgba(138, 107, 36, .12); }
+a:hover { background: rgba(78, 93, 58, .08); }
 
 a:focus-visible {
-  outline: 2px solid var(--brass);
-  outline-offset: 3px;
-  border-radius: 2px;
+  outline: 2px solid var(--moss);
+  outline-offset: 2px;
 }
 
-.links li {
-  font-family: var(--display);
-  font-size: 1.125rem;
+/* ---------- thoughts ---------- */
+
+.entries { margin-top: .5rem; }
+
+.entry {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.entry-date {
+  color: var(--dim);
+  font-size: .8125rem;
+  margin: 0 0 .25rem;
+}
+
+.entry h3 {
+  font-size: .95rem;
+  font-weight: 700;
+  margin: 0 0 .5rem;
+}
+
+.entry p:last-child { margin-bottom: 0; }
+
+/* ---------- garden ---------- */
+
+.plot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1.5rem;
+  margin-top: .5rem;
+}
+
+.plant pre {
+  margin: 0 0 .625rem;
+  font-size: 13px;
+  line-height: 1.15;
+  color: var(--moss);
+}
+
+.plant-label {
+  color: var(--dim);
+  font-size: .8125rem;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .plot { grid-template-columns: 1fr; }
+}
+
+/* ---------- newsletter cta ---------- */
+
+.cta {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: .8125rem;
   letter-spacing: .04em;
-  margin-bottom: .875rem;
+  text-decoration: none;
+  padding: .5rem .875rem;
 }
 
-/* ---------- marginalia ---------- */
+.cta:hover { background: var(--moss); }
+
+.cta:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 2px;
+}
 
 .note {
-  font-size: .875rem;
-  line-height: 1.5;
-  color: var(--grulla);
-  border-left: 2px solid var(--brass);
-  padding-left: .875rem;
-  margin: 0 0 2rem;
-  max-width: 26rem;
-}
-
-.note-label {
-  display: block;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: .75rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--brass);
-  margin-bottom: .25rem;
-}
-
-/* On wide screens the notes step out into the right margin. */
-@media (min-width: 1180px) {
-  .note {
-    position: absolute;
-    top: 3.5rem;
-    left: calc(100% + 3rem);
-    width: 12.5rem;
-    margin: 0;
-    border-left: none;
-    padding-left: 0;
-    border-top: 2px solid var(--brass);
-    padding-top: .625rem;
-  }
+  color: var(--dim);
+  font-size: .8125rem;
 }
 
 /* ---------- footer ---------- */
 
 .foot {
-  border-top: 1px solid var(--rule);
-  padding-top: 1.75rem;
-  font-family: var(--display);
-  font-size: .8125rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--grulla);
+  margin-top: 2.5rem;
+  color: var(--dim);
+  font-size: .75rem;
 }
 
 .foot p { margin: 0; }
-
-/* ---------- narrow screens ---------- */
-
-@media (max-width: 900px) {
-  .trail { display: none; }
-  .wrap { padding-top: 4.5rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .mule { transition: none; }
-}
