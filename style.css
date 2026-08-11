@@ -1,11 +1,12 @@
 :root {
-  --paper: #FBFAF5;
+  --paper: #fff;
   --ink:   #1A1912;
   --dim:   #86836F;
   --rule:  #E1DFD2;
   --moss:  #4E5D3A;
 
-  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, Menlo, monospace;
+  --font: Verdana, Geneva, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, Menlo, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -14,7 +15,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--mono);
+  font-family: var(--font);
   font-size: 15px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +31,7 @@ body {
 
 .mule {
   margin: 0 0 1.25rem;
+  font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.2;
   color: var(--ink);
@@ -146,6 +148,7 @@ a:focus-visible {
 
 .plant pre {
   margin: 0 0 .625rem;
+  font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.15;
   color: var(--moss);
@@ -167,7 +170,7 @@ a:focus-visible {
   display: inline-block;
   background: var(--ink);
   color: var(--paper);
-  font-family: var(--mono);
+  font-family: var(--font);
   font-size: .8125rem;
   letter-spacing: .04em;
   text-decoration: none;
