@@ -10,11 +10,11 @@ favicon.svg
 
 ## Put it on GitHub Pages
 
-1. Create a repo named `USERNAME.github.io` (use your actual GitHub username — that name is what
+1. Create a repo named `aschleigh.github.io` (use your actual GitHub username — that name is what
    gets you the root URL instead of a subpath).
 2. Drop `index.html`, `style.css`, and `favicon.svg` in the root of the repo and push.
 3. Repo → **Settings** → **Pages** → Source: **Deploy from a branch**, Branch: `main`, folder `/ (root)`.
-4. Wait a minute. It'll be live at `https://USERNAME.github.io`.
+4. Wait a minute. It'll be live at `https://aschleigh.github.io`.
 
 From the command line:
 
@@ -23,18 +23,18 @@ git init
 git add .
 git commit -m "Site"
 git branch -M main
-git remote add origin https://github.com/USERNAME/USERNAME.github.io.git
+git remote add origin https://github.com/aschleigh/aschleigh.github.io.git
 git push -u origin main
 ```
 
 If you'd rather use a normal repo name (e.g. `site`), everything works the same but the URL
-becomes `https://USERNAME.github.io/site/`.
+becomes `https://aschleigh.github.io/site/`.
 
 ## Before you push — replace these
 
 In `index.html`:
 
-- `USERNAME` in every GitHub and LinkedIn URL
+- `aschleigh` in every GitHub and LinkedIn URL
 - `you@example.com`
 - The two `href="#"` placeholders (Tractor escape room, music ML notes)
 - Anything in the copy that isn't how you'd actually describe yourself
